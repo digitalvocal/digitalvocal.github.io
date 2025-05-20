@@ -842,38 +842,6 @@
             position: relative;
         }
 
-        .testimonial-card .speaker-icon {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            color: var(--text-medium);
-            cursor: pointer;
-            transition: color var(--transition-fast);
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: opacity var(--transition-fast), transform var(--transition-fast), color var(--transition-fast);
-        }
-
-        .testimonial-card:hover .speaker-icon {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .testimonial-card .speaker-icon:hover {
-            color: var(--accent);
-        }
-
-        .testimonial-card .speaker-icon.speaking {
-            color: var(--accent);
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
         .testimonial-card p {
             font-size: 1.1rem;
             color: var(--text-medium);
@@ -1304,6 +1272,29 @@
             font-size: 0.9rem;
             white-space: nowrap;
         }
+
+        /* Add this to your existing styles */
+        .full-width-image {
+            width: 100vw;
+            height: auto;
+            max-width: 100%;
+            display: block;
+            margin: 0;
+            padding: 0;
+            object-fit: cover;
+        }
+
+        .image-container {
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
     </style>
 </head>
 <body>
@@ -1460,7 +1451,6 @@
                  <div class="testimonial-slider-wrapper">
                     <div class="testimonial-slider">
                         <div class="testimonial-card interactive-element">
-                            <i class="fas fa-volume-up speaker-icon" aria-label="Read testimonial"></i>
                             <p>"Digital Vocal transformed our online presence with their innovative approach and strategic thinking. The results exceeded all expectations!"</p>
                             <div class="client-info">
                                 <img src="Clients Photo\client_jaydeep.jpg" alt="Jaydeep Gorasiya" class="client-avatar" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eee/ccc?text=Error';">
@@ -1471,7 +1461,6 @@
                             </div>
                         </div>
                         <div class="testimonial-card interactive-element">
-                            <i class="fas fa-volume-up speaker-icon" aria-label="Read testimonial"></i>
                             <p>"Their team delivered a stunning website that perfectly captures our brand identity. Professional, creative, and efficient. Highly recommended!"</p>
                             <div class="client-info">
                                 <img src="Clients Photo\client_vimalshah.jpg" alt="Vimal Shah" class="client-avatar" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eee/ccc?text=Error';">
@@ -1482,7 +1471,6 @@
                             </div>
                         </div>
                         <div class="testimonial-card interactive-element">
-                            <i class="fas fa-volume-up speaker-icon" aria-label="Read testimonial"></i>
                             <p>"The digital strategy they developed was insightful and data-driven, helping us double our conversion rates in just three months."</p>
                             <div class="client-info">
                                 <img src="Clients Photo\client_hardikpadaliya.jpg" alt="Hardik Padaliya" class="client-avatar" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eee/ccc?text=Error';">
@@ -1493,7 +1481,6 @@
                             </div>
                         </div>
                          <div class="testimonial-card interactive-element">
-                            <i class="fas fa-volume-up speaker-icon" aria-label="Read testimonial"></i>
                             <p>"Working with Digital Vocal felt like a true partnership. They listened, challenged us, and delivered exceptional creative work."</p>
                             <div class="client-info">
                                 <img src="Clients Photo\client_deepgor.jpg" alt="Deep Gor" class="client-avatar" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eee/ccc?text=Error';">
@@ -1505,7 +1492,6 @@
                         </div>
 
                         <div class="testimonial-card interactive-element">
-                            <i class="fas fa-volume-up speaker-icon" aria-label="Read testimonial"></i>
                             <p>"Digital Vocal transformed our online presence with their innovative approach and strategic thinking. The results exceeded all expectations!"</p>
                             <div class="client-info">
                                 <img src="Clients Photo\client_kapilhirani.jpg" alt="Kapil Hirani" class="client-avatar" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eee/ccc?text=Error';">
@@ -1516,7 +1502,6 @@
                             </div>
                         </div>
                         <div class="testimonial-card interactive-element">
-                            <i class="fas fa-volume-up speaker-icon" aria-label="Read testimonial"></i>
                             <p>"Their team delivered a stunning website that perfectly captures our brand identity. Professional, creative, and efficient. Highly recommended!"</p>
                             <div class="client-info">
                                 <img src="Clients Photo\client_goldybaxi.jpg" alt="Goldy Baxi" class="client-avatar" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eee/ccc?text=Error';">
@@ -1527,7 +1512,6 @@
                             </div>
                         </div>
                         <div class="testimonial-card interactive-element">
-                            <i class="fas fa-volume-up speaker-icon" aria-label="Read testimonial"></i>
                             <p>"The digital strategy they developed was insightful and data-driven, helping us double our conversion rates in just three months."</p>
                             <div class="client-info">
                                 <img src="https://placehold.co/100x100/random/FFF?text=ER" alt="Emily Rodriguez" class="client-avatar" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eee/ccc?text=Error';">
@@ -1538,7 +1522,6 @@
                             </div>
                         </div>
                         <div class="testimonial-card interactive-element">
-                            <i class="fas fa-volume-up speaker-icon" aria-label="Read testimonial"></i>
                             <p>"Working with Digital Vocal felt like a true partnership. They listened, challenged us, and delivered exceptional creative work."</p>
                             <div class="client-info">
                                 <img src="https://placehold.co/100x100/random/FFF?text=DB" alt="David Brown" class="client-avatar" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eee/ccc?text=Error';">
@@ -1995,285 +1978,6 @@
                      });
                 });
             }
-
-            // Text-to-Speech Functionality with ElevenLabs API and Web Speech API fallback
-            const testimonialCards = document.querySelectorAll('.testimonial-card');
-            let currentSpeech = null;
-            let isGeneratingSpeech = false;
-            let currentPlayingCard = null;
-            
-            // Voice IDs for different genders
-            const VOICES = {
-                male: "VR6AewLTigWG4xSOukaG", // Josh - Male voice
-                female: "21m00Tcm4TlvDq8ikWAM" // Rachel - Female voice
-            };
-
-            function stopCurrentSpeech() {
-                if (currentSpeech) {
-                    if (currentSpeech instanceof SpeechSynthesisUtterance) {
-                        window.speechSynthesis.cancel();
-                    } else {
-                        currentSpeech.pause();
-                    }
-                    currentSpeech = null;
-                }
-                isGeneratingSpeech = false;
-                currentPlayingCard = null;
-                document.querySelectorAll('.speaker-icon.speaking').forEach(icon => {
-                    icon.classList.remove('speaking');
-                });
-            }
-
-            function generateSpeechWithWebSpeechAPI(text, isMale) {
-                return new Promise((resolve, reject) => {
-                    try {
-                        // Cancel any ongoing speech
-                        window.speechSynthesis.cancel();
-
-                        const utterance = new SpeechSynthesisUtterance(text);
-                        
-                        // Get available voices
-                        const voices = window.speechSynthesis.getVoices();
-                        
-                        // Find appropriate voice based on gender
-                        const preferredVoice = voices.find(voice => 
-                            isMale ? 
-                                voice.name.toLowerCase().includes('male') || 
-                                voice.name.toLowerCase().includes('david') || 
-                                voice.name.toLowerCase().includes('michael') :
-                                voice.name.toLowerCase().includes('female') || 
-                                voice.name.toLowerCase().includes('samantha') || 
-                                voice.name.toLowerCase().includes('jennifer')
-                        ) || voices[0]; // Fallback to first available voice
-                        
-                        utterance.voice = preferredVoice;
-                        utterance.rate = 1.0;
-                        utterance.pitch = 1.0;
-                        utterance.volume = 1.0;
-                        utterance.lang = 'en-US'; // Set language explicitly
-
-                        // Handle speech end
-                        utterance.onend = () => {
-                            resolve();
-                        };
-
-                        // Handle speech error
-                        utterance.onerror = (error) => {
-                            console.warn('Speech synthesis error:', error);
-                            // If the error is not-allowed, it might be because the speech was interrupted
-                            // In this case, we'll consider it a success if the speech was already playing
-                            if (error.error === 'not-allowed' && error.elapsedTime > 0) {
-                                resolve();
-                            } else {
-                                reject(error);
-                            }
-                        };
-
-                        // Handle speech start
-                        utterance.onstart = () => {
-                            console.log('Speech started');
-                        };
-
-                        // Handle speech pause
-                        utterance.onpause = () => {
-                            console.log('Speech paused');
-                        };
-
-                        // Handle speech resume
-                        utterance.onresume = () => {
-                            console.log('Speech resumed');
-                        };
-
-                        // Handle speech boundary
-                        utterance.onboundary = (event) => {
-                            console.log('Speech boundary:', event);
-                        };
-
-                        // Ensure speech synthesis is ready
-                        if (window.speechSynthesis.speaking) {
-                            window.speechSynthesis.cancel();
-                        }
-
-                        // Add a small delay before speaking to ensure the previous speech is fully cancelled
-                        setTimeout(() => {
-                            window.speechSynthesis.speak(utterance);
-                        }, 100);
-
-                        return utterance;
-                    } catch (error) {
-                        console.error('Error in generateSpeechWithWebSpeechAPI:', error);
-                        reject(error);
-                    }
-                });
-            }
-
-            async function generateSpeech(text, voiceId) {
-                if (isGeneratingSpeech) return null;
-                isGeneratingSpeech = true;
-
-                try {
-                    // Show loading state
-                    const loadingIcon = currentPlayingCard?.querySelector('.speaker-icon');
-                    if (loadingIcon) {
-                        loadingIcon.classList.add('speaking');
-                    }
-
-                    // First try ElevenLabs
-                    try {
-                        const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'xi-api-key': 'sk_e48c230c44c33581db4f316dac99ff455ff8455c548cfc26',
-                                'Accept': 'audio/mpeg'
-                            },
-                            body: JSON.stringify({
-                                text: text,
-                                model_id: "eleven_monolingual_v1",
-                                voice_settings: {
-                                    stability: 0.5,
-                                    similarity_boost: 0.75
-                                }
-                            })
-                        });
-                        
-                        if (!response.ok) {
-                            throw new Error(`ElevenLabs API Error: ${response.status}`);
-                        }
-
-                        const audioBlob = await response.blob();
-                        return URL.createObjectURL(audioBlob);
-                    } catch (elevenLabsError) {
-                        console.warn('ElevenLabs failed, falling back to Web Speech API:', elevenLabsError);
-                        
-                        // Fallback to Web Speech API
-                        const isMale = voiceId === VOICES.male;
-                        try {
-                            currentSpeech = await generateSpeechWithWebSpeechAPI(text, isMale);
-                            return 'web-speech'; // Special return value to indicate Web Speech API is being used
-                        } catch (webSpeechError) {
-                            console.error('Web Speech API failed:', webSpeechError);
-                            throw new Error('Both ElevenLabs and Web Speech API failed');
-                        }
-                    }
-                } catch (error) {
-                    console.error('Error in generateSpeech:', error);
-                    // Show error to user
-                    if (currentPlayingCard) {
-                        const errorIcon = currentPlayingCard.querySelector('.speaker-icon');
-                        if (errorIcon) {
-                            errorIcon.classList.remove('speaking');
-                            errorIcon.style.color = 'red';
-                            setTimeout(() => {
-                                errorIcon.style.color = '';
-                            }, 2000);
-                        }
-                    }
-                    isGeneratingSpeech = false;
-                    return null;
-                }
-            }
-
-            testimonialCards.forEach(card => {
-                const speakerIcon = card.querySelector('.speaker-icon');
-                const testimonialText = card.querySelector('p').textContent;
-                const clientName = card.querySelector('.client-details h4').textContent;
-                
-                const isMale = !clientName.toLowerCase().includes('arti') && 
-                             !clientName.toLowerCase().includes('surbhi') && 
-                             !clientName.toLowerCase().includes('shivani') &&
-                             !clientName.toLowerCase().includes('emily') &&
-                             !clientName.toLowerCase().includes('goldy');
-                
-                const voiceId = isMale ? VOICES.male : VOICES.female;
-
-                card.addEventListener('mouseenter', async () => {
-                    if (currentPlayingCard === card) return;
-                    stopCurrentSpeech();
-                    currentPlayingCard = card;
-                    
-                    try {
-                        const audioUrl = await generateSpeech(`${testimonialText} - ${clientName}`, voiceId);
-                        
-                        if (audioUrl) {
-                            if (audioUrl === 'web-speech') {
-                                // Web Speech API is already playing
-                                return;
-                            }
-                            
-                            currentSpeech = new Audio(audioUrl);
-                            
-                            currentSpeech.onended = () => {
-                                if (currentPlayingCard === card) {
-                                    speakerIcon.classList.remove('speaking');
-                                }
-                                URL.revokeObjectURL(audioUrl);
-                                currentSpeech = null;
-                                isGeneratingSpeech = false;
-                                currentPlayingCard = null;
-                            };
-
-                            currentSpeech.onerror = (error) => {
-                                console.error('Audio playback error:', error);
-                                if (currentPlayingCard === card) {
-                                    speakerIcon.classList.remove('speaking');
-                                    speakerIcon.style.color = 'red';
-                                    setTimeout(() => {
-                                        speakerIcon.style.color = '';
-                                    }, 2000);
-                                }
-                                URL.revokeObjectURL(audioUrl);
-                                currentSpeech = null;
-                                isGeneratingSpeech = false;
-                                currentPlayingCard = null;
-                            };
-
-                            await currentSpeech.play();
-                        } else {
-                            if (currentPlayingCard === card) {
-                                speakerIcon.classList.remove('speaking');
-                            }
-                            isGeneratingSpeech = false;
-                            currentPlayingCard = null;
-                        }
-                    } catch (error) {
-                        console.error('Error playing audio:', error);
-                        if (currentPlayingCard === card) {
-                            speakerIcon.classList.remove('speaking');
-                            speakerIcon.style.color = 'red';
-                            setTimeout(() => {
-                                speakerIcon.style.color = '';
-                            }, 2000);
-                        }
-                        isGeneratingSpeech = false;
-                        currentPlayingCard = null;
-                    }
-                });
-
-                card.addEventListener('mouseleave', () => {
-                    if (currentPlayingCard === card) {
-                        stopCurrentSpeech();
-                    }
-                });
-            });
-
-            // Initialize speech synthesis voices
-            if ('speechSynthesis' in window) {
-                // Chrome loads voices asynchronously
-                window.speechSynthesis.onvoiceschanged = () => {
-                    window.speechSynthesis.getVoices();
-                };
-            }
-
-            // Handle page visibility changes
-            document.addEventListener('visibilitychange', () => {
-                if (document.hidden) {
-                    stopCurrentSpeech();
-                }
-            });
-
-            // Handle page unload
-            window.addEventListener('beforeunload', stopCurrentSpeech);
         });
     </script>
 
