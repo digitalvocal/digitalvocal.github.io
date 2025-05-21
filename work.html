@@ -8,6 +8,7 @@
     <link rel="icon" href="https://placehold.co/32x32/FF3C00/FFFFFF?text=DV" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/fut2mcn.css">
 
     <style>
         /*--------------------------------------------------*/
@@ -158,13 +159,19 @@
             -webkit-backdrop-filter: blur(15px);
         }
 
+        nav.scrolled .logo,
+        nav.scrolled .nav-links a {
+            color: var(--text-light);
+        }
+
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
-            color: var(--text-light);
+            color: #000000;
             font-family: var(--font-secondary);
             letter-spacing: -1px;
             z-index: 1001;
+            transition: color var(--transition-medium);
         }
 
         .nav-links {
@@ -178,6 +185,8 @@
             font-size: 1rem;
             position: relative;
             padding-bottom: 4px;
+            color: #000000;
+            transition: color var(--transition-medium);
         }
 
         .nav-links a::after {
@@ -195,6 +204,7 @@
             width: 100%;
         }
 
+        /* Menu Toggle Button */
         .menu-toggle {
             display: none;
             z-index: 1005;
@@ -208,14 +218,18 @@
         .menu-toggle span {
             display: block;
             position: absolute;
-            height: 2px;
+            height: 3px;
             width: 100%;
-            background: var(--text-light);
+            background: #000000;
             border-radius: 9px;
             opacity: 1;
             left: 0;
             transform: rotate(0deg);
             transition: .25s ease-in-out;
+        }
+
+        nav.scrolled .menu-toggle span {
+            background: var(--text-light);
         }
 
         .menu-toggle span:nth-child(1) { top: 0px; }
@@ -275,12 +289,11 @@
             font-family: var(--font-secondary);
             font-size: clamp(2rem, 6vw, 3.5rem);
             font-weight: 700;
-            color: var(--text-medium);
-            transition: color var(--transition-fast);
+            color: #000000;
+            transition: color var(--transition-fast), transform 0.5s ease, opacity 0.5s ease;
             display: inline-block;
             transform: translateY(20px);
             opacity: 0;
-            transition: color var(--transition-fast), transform 0.5s ease, opacity 0.5s ease;
         }
 
         .overlay-menu.active .overlay-nav-links a {
@@ -288,25 +301,26 @@
             opacity: 1;
         }
 
-        .overlay-menu.active .overlay-nav-links li:nth-child(1) a { transition-delay: 0.1s; }
-        .overlay-menu.active .overlay-nav-links li:nth-child(2) a { transition-delay: 0.2s; }
-        .overlay-menu.active .overlay-nav-links li:nth-child(3) a { transition-delay: 0.3s; }
-        .overlay-menu.active .overlay-nav-links li:nth-child(4) a { transition-delay: 0.4s; }
-
         .overlay-nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .overlay-menu.scrolled .overlay-nav-links a {
             color: var(--text-light);
         }
 
         /*--------------------------------------------------*/
-        /* 3. Work Grid Section
+        /* 3. Work Section
         /*--------------------------------------------------*/
         .work-header {
-            padding: 12rem 2rem 6rem;
             background: var(--bg-dark);
+            padding: 12rem 2rem 6rem;
+            color: var(--text-light);
         }
 
         .work-header h1 {
             font-size: clamp(3rem, 8vw, 5rem);
+            font-family: var(--font-secondary);
             margin-bottom: 2rem;
             color: var(--text-light);
         }
@@ -315,49 +329,60 @@
             font-size: clamp(1.1rem, 1.8vw, 1.4rem);
             color: var(--text-medium);
             max-width: 700px;
+            line-height: 1.6;
         }
 
-        .work-grid {
-            padding: 6rem 2rem;
+        .work {
+            padding: 6rem 2rem 4rem;
             background: var(--bg-light);
         }
 
-        .work-grid-container {
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-family: var(--font-secondary);
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            text-align: left;
+        }
+
+        .section-description {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            color: var(--text-medium);
+            max-width: 800px;
+            margin-bottom: 5rem;
+            line-height: 1.6;
+        }
+
+        .work-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 4rem;
+            margin-top: 2rem;
         }
 
         .work-item {
             position: relative;
             display: block;
-            /*border-radius: var(--border-radius-large);*/
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            transition: transform var(--transition-medium) cubic-bezier(0.2, 1, 0.3, 1), box-shadow var(--transition-medium);
+            transition: box-shadow var(--transition-medium);
             aspect-ratio: 3 / 4;
         }
 
-        
-        .work-item img {
+        .work-item:hover {
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .work-video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform var(--transition-medium);
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
-        .work-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .work-item video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform var(--transition-medium);
-        }
-
-        .work-item:hover video {
+        .work-item:hover .work-video {
             transform: scale(1.05);
         }
 
@@ -485,23 +510,147 @@
             nav { padding: 1.5rem; }
             .menu-toggle { display: block; }
             .nav-links { display: none; }
-            .work-grid-container { gap: 3rem; }
         }
 
         @media (max-width: 768px) {
             html { font-size: 14px; }
-            .work-header { padding: 8rem 1.5rem 4rem; }
-            .work-header h1 { font-size: clamp(2.5rem, 10vw, 4.5rem); }
-            .work-grid { padding: 4rem 1.5rem; }
-            .work-grid-container { grid-template-columns: 1fr; gap: 3rem; }
-            .work-item { aspect-ratio: 4 / 3; }
+            
+            .work-header {
+                padding: 10rem 2rem 4rem;
+            }
+
+            .work-header h1 {
+                font-size: clamp(2.5rem, 7vw, 4rem);
+                margin-bottom: 1.5rem;
+            }
+
+            .work-header p {
+                font-size: clamp(1rem, 1.5vw, 1.3rem);
+            }
+
+            .work { 
+                padding: 4rem 2rem 3rem; 
+            }
+
+            .section-title { 
+                font-size: clamp(2rem, 6vw, 3rem); 
+                margin-bottom: 1.5rem;
+            }
+
+            .section-description {
+                font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+                margin-bottom: 3rem;
+            }
+
+            .work-grid { 
+                grid-template-columns: 1fr; 
+                gap: 3rem;
+                max-width: 500px;
+                margin: 3rem auto 0;
+            }
+
+            .work-item { 
+                display: flex;
+                flex-direction: column;
+                aspect-ratio: auto;
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+                box-shadow: none;
+            }
+
+            .work-item:hover {
+                box-shadow: none;
+            }
+
+            .work-video {
+                position: relative;
+                aspect-ratio: 3/4;
+                width: 100%;
+            }
+
+            .work-item-overlay {
+                position: relative;
+                background: none;
+                padding: 1rem 0;
+                opacity: 1;
+                transform: none;
+                display: block;
+                width: 100%;
+            }
+
+            .work-item-overlay h4 {
+                color: var(--text-light);
+                font-size: 1.25rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .work-item-overlay span {
+                color: var(--accent);
+                font-size: 0.9rem;
+            }
+
+            .footer-content { 
+                grid-template-columns: 1fr; 
+                text-align: left; 
+            }
+            .footer-section { 
+                margin-bottom: 2rem; 
+            }
+            .social-links { 
+                justify-content: flex-start; 
+            }
+            .footer-links { 
+                text-align: left; 
+            }
+            .footer-section p { 
+                max-width: 100%; 
+                margin-left: 0; 
+                margin-right: 0;
+            }
+            .footer-bottom {
+                text-align: left;
+            }
         }
 
         @media (max-width: 480px) {
             .container { padding: 0 1rem; }
             nav { padding: 1rem; }
-            .work-header { padding: 6rem 1rem 3rem; }
-            .work-grid { padding: 3rem 1rem; }
+
+            .work { 
+                padding: 4rem 1rem 2rem; 
+            }
+
+            .work-grid { 
+                gap: 2rem;
+                margin: 2rem auto 0;
+            }
+
+            .work-item-overlay {
+                padding: 0.75rem 0;
+            }
+
+            .work-item-overlay h4 {
+                font-size: 1.1rem;
+            }
+
+            .work-item-overlay span {
+                font-size: 0.85rem;
+            }
+
+            .footer { 
+                padding: 3rem 1rem 1.5rem; 
+            }
+            .footer-content { 
+                gap: 1.5rem; 
+                margin-bottom: 2rem; 
+            }
+            .footer-section h3 {
+                font-size: 1.2rem;
+            }
+            .footer-links a {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -539,39 +688,40 @@
                 <p>Explore our portfolio of innovative digital experiences and creative solutions that have helped brands transform their digital presence.</p>
             </div>
         </section>
-
-        <section class="work-grid">
+        <section class="work">
             <div class="container">
-                <div class="work-grid-container">
-                    <!-- Featured Projects -->
+                <div class="work-grid">
                     <a href="Projects/Hitter/project_hitter.html" class="work-item interactive-element text-cursor">
-                        <video autoplay muted loop playsinline>
+                        <video autoplay muted loop playsinline class="work-video">
                             <source src="Projects/Hitter/showreel_hitter.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
                         </video>
                         <div class="work-item-overlay">
                             <h4>Hitter (Cricket D2C Brand)</h4>
-                            <span>E-commerece / Branding / Sales </span>
+                            <span>E-commere / Branding / Sales </span>
                         </div>
                     </a>
                     <a href="Projects/NEGS/project_negs.html" class="work-item interactive-element text-cursor">
-                        <video autoplay muted loop playsinline>
+                        <video autoplay muted loop playsinline class="work-video">
                             <source src="Projects/NEGS/showreel_negs.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
                         </video>
                         <div class="work-item-overlay">
-                            <h4>New Era Global School</h4>
+                            <h4>New Era Global School (NEGS)</h4>
                             <span>Lead Generation / Branding</span>
                         </div>
                     </a>
-                    <a href="Projects/Megonic/project_Megonic.html" class="work-item interactive-element text-cursor">
-                        <video autoplay muted loop playsinline>
+                    <a href="Projects/Megonic/project_megonic.html" class="work-item interactive-element text-cursor">
+                        <video autoplay muted loop playsinline class="work-video">
                             <source src="Projects/Megonic/showreel_megonic.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
                         </video>
                         <div class="work-item-overlay">
                             <h4>Megonic Holidays</h4>
-                            <span>Performance Marketing / Sales</span>
+                            <span>Performance Marketing / sales</span>
                         </div>
                     </a>
-                    
+                    <!-- Add more work items here -->
                 </div>
             </div>
         </section>
@@ -614,9 +764,9 @@
             <div class="footer-section">
                 <h3>Connect</h3>
                 <ul class="contact-info-footer">
-                    <li>hello@digitalvocal.agency</li>
-                    <li>+1 (555) 123-4567</li>
-                    <li>New York / London / Tokyo</li>
+                    <li>hi@digitalvocal.in</li>
+                    <li>+91 97279 57360</li>
+                    <li>Bhuj, Gujarat</li>
                 </ul>
             </div>
         </div>
@@ -625,9 +775,25 @@
         </div>
     </footer>
 
-    <script>
+    <script defer>
         document.addEventListener('DOMContentLoaded', () => {
-            // Custom Cursor
+            // --- Debounce Function ---
+            function debounce(func, wait, immediate) {
+                let timeout;
+                return function() {
+                    const context = this, args = arguments;
+                    const later = function() {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+                    const callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
+                };
+            }
+
+            // --- Custom Cursor ---
             const cursor = document.querySelector('.custom-cursor');
             const interactiveElements = document.querySelectorAll('.interactive-element');
             const textCursorElements = document.querySelectorAll('.text-cursor');
@@ -640,14 +806,20 @@
                     cursor.style.top = `${e.clientY}px`;
                 }, { passive: true });
 
+                const hoverDebounceTime = 5;
+                const handleMouseEnter = debounce(() => cursor.classList.add('hover'), hoverDebounceTime);
+                const handleMouseLeave = debounce(() => cursor.classList.remove('hover'), hoverDebounceTime);
+                const handleTextMouseEnter = debounce(() => cursor.classList.add('text-hover'), hoverDebounceTime);
+                const handleTextMouseLeave = debounce(() => cursor.classList.remove('text-hover'), hoverDebounceTime);
+
                 interactiveElements.forEach(el => {
-                    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-                    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+                    el.addEventListener('mouseenter', handleMouseEnter);
+                    el.addEventListener('mouseleave', handleMouseLeave);
                 });
 
                 textCursorElements.forEach(el => {
-                    el.addEventListener('mouseenter', () => cursor.classList.add('text-hover'));
-                    el.addEventListener('mouseleave', () => cursor.classList.remove('text-hover'));
+                    el.addEventListener('mouseenter', handleTextMouseEnter);
+                    el.addEventListener('mouseleave', handleTextMouseLeave);
                 });
 
                 document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
@@ -656,21 +828,17 @@
                 cursor.style.display = 'none';
             }
 
-            // Navigation Scroll Effect
+            // --- Navigation Scroll Effect ---
             const nav = document.getElementById('main-nav');
-            if (nav) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 50) {
-                        nav.classList.add('scrolled');
-                    } else {
-                        nav.classList.remove('scrolled');
-                    }
-                }, { passive: true });
+            const overlayMenu = document.getElementById('overlay-menu');
+            
+            if (nav && overlayMenu) {
+                nav.classList.add('scrolled');
+                overlayMenu.classList.add('scrolled');
             }
 
-            // Mobile Menu Toggle
+            // --- Mobile Menu Toggle ---
             const menuToggle = document.getElementById('menu-toggle');
-            const overlayMenu = document.getElementById('overlay-menu');
 
             if (menuToggle && overlayMenu) {
                 const overlayLinks = overlayMenu.querySelectorAll('a');
@@ -694,7 +862,7 @@
                 });
             }
 
-            // Footer Current Year
+            // --- Footer Current Year ---
             const yearSpan = document.getElementById('current-year');
             if (yearSpan) {
                 yearSpan.textContent = new Date().getFullYear();
