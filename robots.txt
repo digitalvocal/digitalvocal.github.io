@@ -4,4 +4,8 @@ Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /private/
 
-Sitemap: https://digitalvocal.in/sitemap.xml 
+# Sitemap location
+Sitemap: https://digitalvocal.in/sitemap.xml
+
+# Allow all crawlers
+Allow: /sitemap.xml 
