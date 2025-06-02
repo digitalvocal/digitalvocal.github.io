@@ -1,11 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /cgi-bin/
-Disallow: /tmp/
-Disallow: /private/
+Allow: /Projects/
+Allow: /work.html
+Allow: /sitemap.xml
 
 # Sitemap location
-Sitemap: https://digitalvocal.in/sitemap.xml
-
-# Allow all crawlers
-Allow: /sitemap.xml 
+Sitemap: https://digitalvocal.in/sitemap.xml 
